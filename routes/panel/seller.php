@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Seller\ProductController;
 use App\Http\Controllers\Seller\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('register',[RegisterController::class,'register'])->name('register');
 
-Route::middleware('auth:sanctum')->group(function (){
-
+Route::middleware(['auth:sanctum','seller'])->group(function (){
+  Route::apiResource('product',ProductController::class);
 });

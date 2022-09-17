@@ -29,6 +29,9 @@ interface EloquentRepositoryInterface
      */
     public function find($id): ?Model;
 
-    public function delete($id);
+    public function delete(Model $model);
+
+    public function update(Model $model,$data): bool;
+
 
 }

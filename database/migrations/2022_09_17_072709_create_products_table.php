@@ -13,10 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->uuid();
-            $table->string('title')->unique();
+            $table->foreignId('seller_profile_id');
+            $table->string('title');
+            $table->string('image');
+            $table->integer('count');
+            $table->integer('price');
+            $table->integer('discount');
             $table->timestamps();
         });
     }
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('products');
     }
 };

@@ -9,6 +9,7 @@ use App\Models\Role;
 use App\Models\User;
 use App\Repositories\Interfaces\UserRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class UserRepository extends BaseRepository implements UserRepositoryInterface
 {
@@ -22,14 +23,16 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         parent::__construct($model);
     }
 
-    public function createSeller(array $user_data, array $profile_data): ?Model
+    public function createSeller(array $user_data, array $profile_data): ? Model
     {
         $seller_role=Role::query()->where('title',UserRole::SELLER)->firstOrFail();
         $user_data['role_id']=$seller_role->id;
         $user_data['status']=UserStatus::ACTIVATE;
         $profile_data['status']=SellerStatus::ACTIVATE;
-        $user=$this->model->create($user_data);
-        $user->sellerProfile()->create($profile_data);
-        return $user;
+        return DB::transaction(function () use ($user_data,$profile_data) {
+            $user = $this->model->create($user_data);
+            $user->sellerProfile()->create($profile_data);
+            return $user;
+        });
     }
 }

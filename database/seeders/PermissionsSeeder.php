@@ -17,7 +17,7 @@ class PermissionsSeeder extends Seeder
 
         //user permissions
         Permission::query()
-            ->insert([
+            ->create([
                 ['title'=>'create_user', 'name'=>'اضافه کردن کاربر '],
                 ['title'=>'read_user', 'name'=>'دیدن کاربر'],
                 ['title'=>'edit_user', 'name'=>'ویرایش کاربر '],
@@ -26,7 +26,7 @@ class PermissionsSeeder extends Seeder
 
         //role permissions
         Permission::query()
-            ->insert([
+            ->create([
                 ['title'=>'create_role', 'name'=>'اضافه کردن نقش '],
                 ['title'=>'read_role', 'name'=>'دیدن نقش'],
                 ['title'=>'edit_role', 'name'=>'ویرایش نقش '],
@@ -35,7 +35,7 @@ class PermissionsSeeder extends Seeder
 
         //customer permissions
         Permission::query()
-            ->insert([
+            ->create([
                 ['title'=>'create_customer', 'name'=>'اضافه کردن مشتری '],
                 ['title'=>'read_customer', 'name'=>'دیدن مشتری'],
                 ['title'=>'edit_customer', 'name'=>'ویرایش مشتری '],
@@ -44,7 +44,7 @@ class PermissionsSeeder extends Seeder
 
         //seller permissions
         Permission::query()
-            ->insert([
+            ->create([
                 ['title'=>'create_seller', 'name'=>'اضافه کردن فروشنده '],
                 ['title'=>'read_seller', 'name'=>'دیدن فروشنده'],
                 ['title'=>'edit_seller', 'name'=>'ویرایش فروشنده '],
@@ -53,7 +53,7 @@ class PermissionsSeeder extends Seeder
 
         //commodity permissions
         Permission::query()
-            ->insert([
+            ->create([
                 ['title'=>'create_commodity', 'name'=>'اضافه کردن کالا '],
                 ['title'=>'read_commodity', 'name'=>'دیدن کالا'],
                 ['title'=>'edit_commodity', 'name'=>'ویرایش کالا '],
@@ -62,7 +62,7 @@ class PermissionsSeeder extends Seeder
 
         //importing permissions
         Permission::query()
-            ->insert([
+            ->create([
                 ['title'=>'create_importing', 'name'=>'اضافه کردن ورود کالا '],
                 ['title'=>'read_importing', 'name'=>'دیدن ورود کالا'],
                 ['title'=>'edit_importing', 'name'=>'ویرایش ورود کالا '],
@@ -72,7 +72,7 @@ class PermissionsSeeder extends Seeder
 
         //order permissions
         Permission::query()
-            ->insert([
+            ->create([
                 ['title'=>'create_order', 'name'=>'اضافه کردن سفارش '],
                 ['title'=>'read_order', 'name'=>'دیدن سفارش'],
                 ['title'=>'edit_order', 'name'=>'ویرایش سفارش '],
@@ -81,7 +81,7 @@ class PermissionsSeeder extends Seeder
 
         //warehouse permissions
         Permission::query()
-            ->insert([
+            ->create([
                 ['title'=>'create_warehouse', 'name'=>'اضافه کردن انبار '],
                 ['title'=>'read_warehouse', 'name'=>'دیدن انبار'],
                 ['title'=>'edit_warehouse', 'name'=>'ویرایش انبار '],
@@ -90,7 +90,7 @@ class PermissionsSeeder extends Seeder
 
         //withdrawal permissions
         Permission::query()
-            ->insert([
+            ->create([
                 ['title'=>'create_withdrawal', 'name'=>'اضافه کردن فروش کالا '],
                 ['title'=>'read_withdrawal', 'name'=>'دیدن فروش کالا'],
                 ['title'=>'edit_withdrawal', 'name'=>'ویرایش فروش کالا '],
@@ -100,7 +100,7 @@ class PermissionsSeeder extends Seeder
 
         //activity permissions
         Permission::query()
-            ->insert([
+            ->create([
                 ['title'=>'read_activity', 'name'=>'مشاهده فعالیت ها'],
             ]);
     }

@@ -19,12 +19,27 @@ class Controller extends BaseController
         ];
         return response()->json($output, $status);
     }
-    protected function responseSuccess($data = null, $status = 201)
+    protected function responseSuccess($data = null, $status = 200)
     {
         $output = [
             'success' => true,
             'data' => $data,
         ];
         return response()->json($output, $status);
+    }
+
+    public function responseInserted()
+    {
+        return $this->responseSuccess('successfully inserted');
+    }
+
+    public function responseUpdated()
+    {
+        return $this->responseSuccess('successfully updated');
+    }
+
+    public function responseDeleted()
+    {
+        return $this->responseSuccess('successfully deleted');
     }
 }

@@ -56,15 +56,18 @@ class BaseRepository implements EloquentRepositoryInterface
         return $this->model->query()->orderBy('id', 'DESC')->get();
     }
 
-    public function delete($id)
+    public function delete(Model $model)
     {
-        $obj = $this->find($id);
-        return $obj->delete();
+        return $model->delete();
     }
 
     public function allWithPagination()
     {
         return $this->model->query()->orderBy('id', 'DESC')->paginate('20');
+    }
+    public function update(Model $model, $data): bool
+    {
+       return $model->update($data);
     }
 
 }
