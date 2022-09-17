@@ -20,6 +20,7 @@ class SellerProfileResource extends JsonResource
             'lat' => $this->lat,
             'lng' => $this->lng,
             'status' => $this->status,
+            'products'=>ProductResource::collection($this->whenLoaded('products')),
         ];
     }
 }

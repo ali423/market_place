@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\UserRepository;
+use Illuminate\Support\Facades\Auth;
 
 class SellerService
 {
@@ -21,4 +22,8 @@ class SellerService
     public function show($uuid){
         return $this->user_repository->show($uuid);
     }
+    public function listWithProducts($address_uuid){
+        return $this->user_repository->sellerProfileWithProducts($address_uuid);
+    }
+
 }

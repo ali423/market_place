@@ -41,4 +41,10 @@ class AuthService
         auth()->login($user);
         return $user;
     }
+
+    public function customerRegister($user_data,$addresses){
+        $user= $this->user_repository->createCustomer($user_data,$addresses);
+        auth()->login($user);
+        return $user;
+    }
 }

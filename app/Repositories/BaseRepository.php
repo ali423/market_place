@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 
+use App\Models\Role;
 use App\Repositories\Interfaces\EloquentRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
@@ -70,4 +71,7 @@ class BaseRepository implements EloquentRepositoryInterface
        return $model->update($data);
     }
 
+    public function findRoleByTitle($title){
+        return Role::query()->where('title', $title)->firstOrFail();
+    }
 }

@@ -45,6 +45,11 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('seller')
                 ->name('seller.')
                 ->group(base_path('routes/panel/seller.php'));
+
+            Route::middleware('api')
+                ->prefix('customer')
+                ->name('customer.')
+                ->group(base_path('routes/panel/customer.php'));
         });
     }
 
