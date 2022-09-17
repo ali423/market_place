@@ -26,7 +26,7 @@ class AdminSeeder extends Seeder
                 'name' => 'Ali Mokhtari',
                 'status' => UserStatus::ACTIVATE,
                 'email' => 'alimokhtari423@gmail.com',
-                'password' => bcrypt('123456789'),
+                'password' => ('123456789'),
             ]);
     }
 }
