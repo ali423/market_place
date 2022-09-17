@@ -15,4 +15,10 @@ class SellerService
     public function create($user_data,$profile_data){
         $this->user_repository->createSeller($user_data,$profile_data);
     }
+    public function listWithPaginate(){
+        return $this->user_repository->sellersWithPagination();
+    }
+    public function show($uuid){
+        return $this->user_repository->show($uuid);
+    }
 }
